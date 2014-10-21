@@ -4,6 +4,15 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeAddon;
 
 class SlugFieldType extends FieldTypeAddon
 {
+    protected $slug = 'slug';
+
+    /**
+     * The database column type this field type uses.
+     *
+     * @var string
+     */
+    public $columnType = 'string';
+
     /**
      * Available field type settings.
      *
@@ -21,7 +30,7 @@ class SlugFieldType extends FieldTypeAddon
      */
     public function input()
     {
-        return \Form::input('text', $this->inputName(), $this->value());
+        return \Form::input('text', $this->inputName(), $this->value);
     }
 
     /**
