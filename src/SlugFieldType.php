@@ -1,4 +1,4 @@
-<?php namespace Streams\Addon\FieldType\Slug;
+<?php namespace Anomaly\Streams\FieldType\Slug;
 
 use Streams\Core\Addon\FieldTypeAbstract;
 
