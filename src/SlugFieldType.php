@@ -1,16 +1,9 @@
-<?php namespace Anomaly\Streams\FieldType\Slug;
+<?php namespace Anomaly\Streams\Addon\FieldType\Slug;
 
-use Streams\Core\Addon\FieldTypeAbstract;
+use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeAddon;
 
-class SlugFieldType extends FieldTypeAbstract
+class SlugFieldType extends FieldTypeAddon
 {
-    /**
-     * The database column type this field type uses.
-     *
-     * @var string
-     */
-    public $columnType = 'string';
-
     /**
      * Available field type settings.
      *
