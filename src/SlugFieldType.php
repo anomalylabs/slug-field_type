@@ -1,8 +1,8 @@
 <?php namespace Anomaly\Streams\Addon\FieldType\Slug;
 
-use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeAddon;
+use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
 
-class SlugFieldType extends FieldTypeAddon
+class SlugFieldType extends FieldType
 {
 
     public $settings = array(
