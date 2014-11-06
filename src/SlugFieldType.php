@@ -5,13 +5,13 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
 class SlugFieldType extends FieldType
 {
 
-    public $settings = array(
+    protected $settings = array(
         'slug_type',
         'slug_field',
     );
 
-    public function mutate($value)
+    protected function onSet($value)
     {
-        return slugify($value);
+        return slugify($value, '_');
     }
 }
