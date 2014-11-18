@@ -10,6 +10,7 @@
 (function (window, $) {
 
     var char_map = {
+
         //Latin
         'À': 'A', 'Á': 'A', 'Â': 'A', 'Ã': 'A', 'Ä': 'A', 'Å': 'A', 'Æ': 'AE', 'Ç': 'C', 'È': 'E', 'É': 'E', 'Ê': 'E', 'Ë': 'E', 'Ì': 'I', 'Í': 'I', 'Î': 'I',
         'Ï': 'I', 'Ð': 'D', 'Ñ': 'N', 'Ò': 'O', 'Ó': 'O', 'Ô': 'O', 'Õ': 'O', 'Ö': 'O', 'Ő': 'O', 'Ø': 'O', 'Ù': 'U', 'Ú': 'U', 'Û': 'U', 'Ü': 'U', 'Ű': 'U',
@@ -90,7 +91,7 @@
             console.log('Error no slug field');
             return;
         }
-        this.type = this.cfg.type || '_';
+        this.type = this.cfg.type || $(e).data('separator');
         this.$slug = $(this.cfg.slug);
         this.$title = $(e);
 
@@ -100,47 +101,29 @@
     Slugify.prototype = {
         encode: function (str) {
             if (typeof str != 'undefined') {
+
                 var slug = '';
-                str = $.trim(str);
+
+                //str = $.trim(str);
 
                 for (var i = 0; i < str.length; i++) {
                     slug += (char_map[str.charAt(i)]) ? char_map[str.charAt(i)] : str.charAt(i);
                 }
 
-                return slug.toLowerCase().replace(/-+/g, '').replace(/\s+/g, this.type).replace(/[^a-z0-9_\-]/g, '');
+                return slug.toLowerCase().replace(/-+/g, this.type).replace(/\s+/g, this.type).replace(/[^a-z0-9_\-]/g, this.type);
             }
         },
         register_events: function () {
             var me = this, $title = this.$title, $slug = this.$slug;
 
-            // Check if the	 field is a text field or undefined (select)
-            if ($title.attr('type') == 'text') {
-                // For text fields
-                $title.keyup(function (e) {
-                    $slug.val(me.encode(e.currentTarget.value));
-                });
+            // For text fields
+            $title.keyup(function (e) {
+                $slug.val(me.encode(e.currentTarget.value));
+            });
 
-                // Check if it's empty first and populate if so
-                if ($slug.val() == '') {
-                    $slug.val(me.encode($title.val()));
-                }
-            }
-            else {
-                // For dropdown fields
-                if ($title.hasClass('chzn')) {
-                    $title.chosen.change(function (e) {
-                        $slug.val(me.encode(e.currentTarget.value));
-                    });
-                }
-                else {
-                    $title.change(function (e) {
-                        $slug.val(me.encode(e.currentTarget.value));
-                    });
-                }
-                // Check if it's empty first and populate if so
-                if ($slug.val() == '') {
-                    $slug.val(me.encode($(':selected', $title).val()));
-                }
+            // Check if it's empty first and populate if so
+            if ($slug.val() == '') {
+                $slug.val(me.encode($title.val()));
             }
         }
     };
@@ -153,10 +136,6 @@
             if (!data) $this.data('slugify', (data = new Slugify(this, options)));
             if (typeof option == 'string') data[option]();
         })
-    };
-    $.fn.slugify.defaults = {
-        slug: '#slug',
-        type: '_',
     };
 
 })(window, jQuery);
