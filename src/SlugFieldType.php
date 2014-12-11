@@ -29,7 +29,7 @@ class SlugFieldType extends FieldType
     {
         $data = parent::getInputData();
 
-        $data['separator'] = $this->getConfig('separator', '_');
+        $data['separator'] = $this->pullConfig('separator', '_');
 
         return $data;
     }
