@@ -42,6 +42,6 @@ class SlugFieldType extends FieldType
      */
     public function mutate($value)
     {
-        return slugify($value, '_');
+        return app('Illuminate\Support\Str')->slug($value, '_');
     }
 }
