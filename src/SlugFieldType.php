@@ -1,4 +1,4 @@
-<?php namespace Anomaly\Streams\Addon\FieldType\Slug;
+<?php namespace Anomaly\SlugFieldType;
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
 
