@@ -1,5 +1,5 @@
 {
-    "name": "anomaly/slug-field-type",
+    "name": "anomaly/slug-field_type",
     "type": "streams-addon",
     "description": "Slug field type.",
     "authors": [
