@@ -18,7 +18,7 @@ class SlugFieldType extends FieldType
      *
      * @var string
      */
-    protected $inputView = 'field_type.slug::input';
+    protected $inputView = 'anomaly.field_type.slug::input';
 
     /**
      * Get view data for the input.
