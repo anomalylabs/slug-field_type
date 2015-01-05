@@ -21,20 +21,6 @@ class SlugFieldType extends FieldType
     protected $inputView = 'anomaly.field_type.slug::input';
 
     /**
-     * Get view data for the input.
-     *
-     * @return array
-     */
-    public function getInputData()
-    {
-        $data = parent::getInputData();
-
-        $data['separator'] = $this->pullConfig('separator', '_');
-
-        return $data;
-    }
-
-    /**
      * Slugify the value before setting it to the entry.
      *
      * @param $value

@@ -3,9 +3,9 @@
 
 <input
         type="text"
-        name="{{ name }}"
-        value="{{ value }}"
-        class="{{ class }} slug"
-        placeholder="{{ placeholder }}"
-        data-separator="{{ separator }}"
+        class="form-control slug"
+        name="{{ field_type.getFieldName() }}"
+        value="{{ field_type.value }}"
+        placeholder="{{ field_type.placeholder }}"
+        data-separator="{{ field_type.config.separator }}"
         >
