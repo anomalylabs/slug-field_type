@@ -28,6 +28,6 @@ class SlugFieldType extends FieldType
      */
     public function mutate($value)
     {
-        return app('Illuminate\Support\Str')->slug($value, '_');
+        return app('Illuminate\Support\Str')->slug($value, array_get($this->config, 'separator', '_'));
     }
 }

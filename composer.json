@@ -1,13 +1,22 @@
 {
     "name": "anomaly/slug-field_type",
     "type": "streams-addon",
-    "description": "Slug field type.",
+    "description": "A slug value field type.",
+    "keywords": ["streams-addon", "slug", "pyrocms", "laravel"],
+    "homepage": "http://anomaly.is/",
+    "version": "1.0.0-alpha",
+    "license": "MIT",
     "authors": [
         {
-            "name": "AnomalyLabs",
-            "email": "hello@anomaly.is"
+            "name": "AnomalyLabs, Inc.",
+            "email": "hello@anomaly.is",
+            "homepage": "http://anomaly.is/",
+            "role": "Owner"
         }
     ],
+    "support": {
+        "email": "support@anomaly.is"
+    },
     "autoload": {
         "psr-4": {
             "Anomaly\\SlugFieldType\\": "src/"

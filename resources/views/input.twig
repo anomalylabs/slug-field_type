@@ -7,5 +7,5 @@
         name="{{ field_type.getFieldName() }}"
         value="{{ field_type.value }}"
         placeholder="{{ field_type.placeholder }}"
-        data-separator="{{ field_type.config.separator }}"
+        data-separator="{{ field_type.config.separator ?: '_' }}"
         >
