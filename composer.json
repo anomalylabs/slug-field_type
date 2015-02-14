@@ -1,7 +1,7 @@
 {
     "name": "anomaly/slug-field_type",
     "type": "streams-addon",
-    "description": "A slug value field type.",
+    "description": "A slug formatted string field type.",
     "keywords": [
         "streams-addon",
         "slug",

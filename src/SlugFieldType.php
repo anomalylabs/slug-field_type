@@ -8,7 +8,7 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
  * @link          http://anomaly.is/streams-platform
  * @author        AnomalyLabs, Inc. <hello@anomaly.is>
  * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\Streams\Addon\FieldType\Slug
+ * @package       Anomaly\SlugFieldType
  */
 class SlugFieldType extends FieldType
 {
@@ -20,14 +20,4 @@ class SlugFieldType extends FieldType
      */
     protected $inputView = 'anomaly.field_type.slug::input';
 
-    /**
-     * Slugify the value before setting it to the entry.
-     *
-     * @param $value
-     * @return mixed|string
-     */
-    public function mutate($value)
-    {
-        return app('Illuminate\Support\Str')->slug($value, array_get($this->config, 'separator', '_'));
-    }
 }
