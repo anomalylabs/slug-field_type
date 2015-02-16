@@ -25,14 +25,14 @@ class SlugFieldTypeModifier extends FieldTypeModifier
     /**
      * Create a new SlugFieldTypeModifier instance.
      *
-     * @param FieldType $type
+     * @param FieldType $fieldType
      * @param Str       $str
      */
-    public function __construct(FieldType $type, Str $str)
+    public function __construct(FieldType $fieldType, Str $str)
     {
         $this->str = $str;
 
-        parent::__construct($type);
+        parent::__construct($fieldType);
     }
 
     /**
@@ -43,6 +43,6 @@ class SlugFieldTypeModifier extends FieldTypeModifier
      */
     public function modify($value)
     {
-        return $this->str->slug($value, array_get($this->type->getConfig(), 'separator', '-'));
+        return $this->str->slug($value, array_get($this->fieldType->getConfig(), 'separator', '-'));
     }
 }
