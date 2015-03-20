@@ -1,5 +1,4 @@
 {{ asset_add("scripts.js", "anomaly.field_type.slug::js/jquery.slugify.js") }}
-{{ asset_add("scripts.js", "anomaly.field_type.slug::js/input.js") }}
 
 <input
         type="text"
@@ -7,5 +6,19 @@
         name="{{ field_type.getInputName() }}"
         value="{{ field_type.value }}"
         placeholder="{{ field_type.placeholder }}"
-        data-separator="{{ field_type.config.separator ?: '-' }}"
         >
+
+<script>
+    $(document).ready(function () {
+
+        var target = 'input[name="{{ field_type.getInputName() }}"]';
+        var slug = $(target);
+        var form = slug.closest('form');
+
+        // Make sure we find a title in the same form.
+        // The ~= is a contains selector.
+        var source = form.find('input[name~="{{ field_type.config.field|default('title') }}"]');
+
+        $(target).slugify(source);
+    });
+</script>
