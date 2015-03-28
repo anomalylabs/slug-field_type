@@ -7,6 +7,7 @@ $(document).ready(function () {
         slug: 'input.slug'
     });
 
+    // Watch for changes if applicable.
     slugs.each(function () {
 
         var slug = $(this);
