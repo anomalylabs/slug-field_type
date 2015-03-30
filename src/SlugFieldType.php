@@ -20,4 +20,13 @@ class SlugFieldType extends FieldType
      */
     protected $inputView = 'anomaly.field_type.slug::input';
 
+    /**
+     * The config values.
+     *
+     * @var array
+     */
+    protected $config = [
+        'type' => '-'
+    ];
+
 }

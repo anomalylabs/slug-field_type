@@ -3,10 +3,10 @@
 
 <input
         type="text"
-        class="form-control slug"
-        name="{{ field_type.getInputName() }}"
+        class="slug"
         value="{{ field_type.value }}"
+        name="{{ field_type.getInputName() }}"
         placeholder="{{ field_type.placeholder }}"
-        data-separator="{{ field_type.config.separator ?: '-' }}"
         data-watch="{{ field_type.config.watch }}"
+        data-type="{{ field_type.config.type }}"
         >

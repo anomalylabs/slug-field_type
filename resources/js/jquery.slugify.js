@@ -91,7 +91,7 @@
             console.log('Error no slug field');
             return;
         }
-        this.type = this.cfg.type || $(e).data('separator');
+        this.type = this.cfg.type || $(e).data('type');
         this.$slug = $(this.cfg.slug);
         this.$title = $(e);
 
