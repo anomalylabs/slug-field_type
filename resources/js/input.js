@@ -14,7 +14,7 @@ $(document).ready(function () {
         var form = $(this).closest('form');
         var slugify = form.find('[data-field="' + slug.data('slugify') + '"]').first().find('input');
 
-        if (slugify.length) {
+        if (!slug.is(':disabled') && slugify.length) {
             slugify.on('keyup', function () {
                 slug.val(slugify.val()).trigger('keyup');
             });
