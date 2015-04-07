@@ -12,11 +12,11 @@ $(document).ready(function () {
 
         var slug = $(this);
         var form = $(this).closest('form');
-        var watched = form.find('[data-field="' + slug.data('watch') + '"]').first().find('input');
+        var slugify = form.find('[data-field="' + slug.data('slugify') + '"]').first().find('input');
 
-        if (watched.length) {
-            watched.on('keyup', function () {
-                slug.val(watched.val()).trigger('keyup');
+        if (slugify.length) {
+            slugify.on('keyup', function () {
+                slug.val(slugify.val()).trigger('keyup');
             });
         }
     });
