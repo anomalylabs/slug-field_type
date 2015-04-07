@@ -8,4 +8,5 @@
         name="{{ field_type.getInputName() }}"
         placeholder="{{ field_type.placeholder }}"
         data-slugify="{{ field_type.config.slugify }}"
-        data-type="{{ field_type.config.type }}">
+        data-type="{{ field_type.config.type }}"
+        {{ field_type.disabled ? 'disabled' }}>
