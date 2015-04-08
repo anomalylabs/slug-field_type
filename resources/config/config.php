@@ -1,7 +1,13 @@
 <?php
 
 return [
-    'separator' => [
-        'type' => 'anomaly.field_type.text'
+    'type' => [
+        'type'   => 'anomaly.field_type.select',
+        'config' => [
+            'options' => [
+                '-' => 'foo-bar-baz',
+                '_' => 'foo_bar_baz'
+            ]
+        ]
     ]
 ];
