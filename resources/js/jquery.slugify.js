@@ -430,9 +430,9 @@
     $.fn.slugify = function (option) {
         return this.each(function () {
             var $this = $(this)
-                , data = $this.data('slugify')
+                , data = $this.data('slug')
                 , options = $.extend({}, $.fn.slugify.defaults, $this.data(), typeof option == 'object' && option);
-            if (!data) $this.data('slugify', (data = new Slugify(this, options)));
+            if (!data) $this.data('slug', (data = new Slugify(this, options)));
             if (typeof option == 'string') data[option]();
         })
     };
