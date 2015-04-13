@@ -43,6 +43,6 @@ class SlugFieldTypeModifier extends FieldTypeModifier
      */
     public function modify($value)
     {
-        return $this->str->slug($value, array_get($this->fieldType->getConfig(), 'separator', '-'));
+        return $this->str->slug($value, array_get($this->fieldType->getConfig(), 'type', '-'));
     }
 }
