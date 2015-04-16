@@ -6,7 +6,8 @@ return [
         'config' => [
             'options' => [
                 '-' => 'foo-bar-baz',
-                '_' => 'foo_bar_baz'
+                '_' => 'foo_bar_baz',
+                ''  => 'foobarbaz'
             ]
         ]
     ]
