@@ -409,7 +409,12 @@
                     slug += (char_map[str.charAt(i)]) ? char_map[str.charAt(i)] : str.charAt(i);
                 }
 
-                return slug.toLowerCase().replace(/-+/g, this.type).replace(/\s+/g, this.type).replace(/[^a-z0-9_\-]/g, this.type);
+                return slug
+                    .toLowerCase()
+                    .replace(/-+/g, this.type) // Replace hyphens
+                    .replace(/\s+/g, this.type) // Replace spaces
+                    .replace(/[^a-z0-9_\-]/g, this.type) // Replace non-alphanumerical
+                    .replace(/([^a-z0-9]$)/g, ''); // Replace ending slug character
             }
         },
         register_events: function () {
