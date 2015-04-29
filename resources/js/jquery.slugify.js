@@ -413,8 +413,8 @@
                     .toLowerCase()
                     .replace(/-+/g, this.type) // Replace hyphens
                     .replace(/\s+/g, this.type) // Replace spaces
-                    .replace(/[^a-z0-9_\-]/g, this.type) // Replace non-alphanumerical
-                    .replace(/([^a-z0-9]$)/g, ''); // Replace ending slug character
+                    .replace(/[^a-z0-9_\-]/g, this.type); // Replace non-alphanumerical
+                    //.replace(/([^a-z0-9]$)/g, ''); // Replace ending slug character
             }
         },
         register_events: function () {
