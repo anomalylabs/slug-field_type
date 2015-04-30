@@ -16,7 +16,7 @@ $(document).ready(function () {
 
         if (!slug.is(':disabled') && slugify.length) {
             slugify.on('keyup', function () {
-                slug.val(slugify.val()).trigger('keyup');
+                slug.val(slugify.val().replace(/([^a-zA-Z0-9]+$)/g, '')).trigger('keyup');
             });
         }
     });
