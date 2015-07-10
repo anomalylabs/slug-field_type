@@ -2,5 +2,5 @@
 
 return [
     'name'        => 'Slug',
-    'description' => 'A slug value field type.',
+    'description' => 'A slug formatted string field type.'
 ];
