@@ -44,7 +44,7 @@ This field type returns the string slug by default.
 
 ### `humanized()`
 
-Returns the slug converted to a humanized string. For example: `my-awesome-slug` becomes `My Awesome Slug`. 
+Returns the slug converted to a humanized string. For example `my-awesome-slug` becomes `My Awesome Slug`. 
 
     // Twig usage
     {{ entry.example.humanized }}
