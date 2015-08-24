@@ -26,7 +26,7 @@ class SlugFieldType extends FieldType
      * @var array
      */
     protected $config = [
-        'type' => '-'
+        'type' => '_'
     ];
 
 }
