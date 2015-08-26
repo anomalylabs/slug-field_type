@@ -1,6 +1,5 @@
 <?php namespace Anomaly\SlugFieldType;
 
-use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
 use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeModifier;
 use Illuminate\Support\Str;
 
@@ -25,14 +24,11 @@ class SlugFieldTypeModifier extends FieldTypeModifier
     /**
      * Create a new SlugFieldTypeModifier instance.
      *
-     * @param FieldType $fieldType
-     * @param Str       $str
+     * @param Str $str
      */
-    public function __construct(FieldType $fieldType, Str $str)
+    public function __construct(Str $str)
     {
         $this->str = $str;
-
-        parent::__construct($fieldType);
     }
 
     /**
