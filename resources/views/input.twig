@@ -9,5 +9,6 @@
         placeholder="{{ field_type.placeholder }}"
         data-slugify="{{ field_type.config.slugify }}"
         data-type="{{ field_type.config.type }}"
+        {{ field_type.required ? 'required' }}
         {{ field_type.disabled ? 'disabled' }}
-        {{ field_type.required ? 'required' }}>
+        {{ field_type.readonly ? 'readonly' }}>
