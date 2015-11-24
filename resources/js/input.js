@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var slugs = $('input.slug');
+    var slugs = $('.slug-field_type input');
 
     // Slugify slug inputs.
     slugs.slugify({
