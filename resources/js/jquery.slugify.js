@@ -414,7 +414,8 @@
                     .replace(/-+/g, this.type) // Replace separators
                     .replace(/\s+/g, this.type) // Replace spaces
                     .replace(/[^a-z0-9_\-]/g, this.type) // Replace non-alphanumerical
-                    .replace(/-{2,}/g, this.type); // Replace multiple separators
+                    .replace(/-{2,}/g, this.type) // Replace multiple separators
+                    .replace(/_{2,}/g, this.type); // Replace multiple separators
             }
         },
         register_events: function () {
