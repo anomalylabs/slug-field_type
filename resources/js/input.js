@@ -1,14 +1,14 @@
 $(document).ready(function () {
 
-    var slugs = $('input[data-provides="slug"]');
+    var selector = 'input[data-provides="slug"]';
 
     // Slugify slug inputs.
-    slugs.slugify({
-        slug: 'input.slug'
+    $(selector).slugify({
+        slug: selector
     });
 
     // Watch for changes if applicable.
-    slugs.each(function () {
+    $(selector).each(function () {
 
         var slug = $(this);
         var form = $(this).closest('form');
