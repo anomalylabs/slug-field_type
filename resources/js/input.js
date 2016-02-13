@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var selector = 'input[data-provides="slug"]';
+    var selector = 'input[data-provides="anomaly.field_type.slug"]';
 
     // Slugify slug inputs.
     $(selector).slugify({
@@ -12,7 +12,7 @@ $(document).ready(function () {
 
         var slug = $(this);
         var form = $(this).closest('form');
-        var slugify = form.find('[data-field="' + slug.data('slugify') + '"]').first().find('input');
+        var slugify = form.find('[data-field="' + slug.data('slugify') + '"]').first();
 
         if (!slug.is(':disabled') && slugify.length) {
             slugify.on('keyup', function () {

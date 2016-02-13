@@ -3,13 +3,13 @@
 
 <input
         type="text"
-        data-provides="slug"
-        class="slug form-control"
+        class="form-control"
         value="{{ field_type.value }}"
         name="{{ field_type.input_name }}"
         placeholder="{{ field_type.placeholder }}"
         data-slugify="{{ field_type.config.slugify }}"
         data-type="{{ field_type.config.type }}"
+        {{ html_attributes(field_type.attributes) }}
         {{ field_type.required ? 'required' }}
         {{ field_type.disabled ? 'disabled' }}
         {{ field_type.readonly ? 'readonly' }}>
