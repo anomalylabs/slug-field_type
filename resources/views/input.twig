@@ -1,15 +1,26 @@
 {{ asset_add("scripts.js", "anomaly.field_type.slug::js/jquery.slugify.js") }}
 {{ asset_add("scripts.js", "anomaly.field_type.slug::js/input.js") }}
 
-<input
-        type="text"
-        class="form-control"
-        value="{{ field_type.value }}"
-        name="{{ field_type.input_name }}"
-        placeholder="{{ field_type.placeholder }}"
-        data-slugify="{{ field_type.config.slugify }}"
-        data-type="{{ field_type.config.type }}"
-        {{ html_attributes(field_type.attributes) }}
-        {{ field_type.required ? 'required' }}
-        {{ field_type.disabled ? 'disabled' }}
-        {{ field_type.readonly ? 'readonly' }}>
+
+<div class="{{ field_type.config.prefix ? 'input-group' }}">
+
+    {% if field_type.config.prefix %}
+        <span class="input-group-addon">
+            {{ field_type.config.prefix }}
+        </span>
+    {% endif %}
+
+    <input
+            type="text"
+            class="form-control"
+            value="{{ field_type.value }}"
+            name="{{ field_type.input_name }}"
+            placeholder="{{ field_type.placeholder }}"
+            data-slugify="{{ field_type.config.slugify }}"
+            data-type="{{ field_type.config.type }}"
+            {{ html_attributes(field_type.attributes) }}
+            {{ field_type.required ? 'required' }}
+            {{ field_type.disabled ? 'disabled' }}
+            {{ field_type.readonly ? 'readonly' }}>
+
+</div>
