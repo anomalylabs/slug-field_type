@@ -31,11 +31,31 @@ class SlugFieldType extends FieldType
     ];
 
     /**
+     * Get the rules.
+     *
+     * @return array
+     */
+    public function getRules()
+    {
+        $rules = parent::getRules();
+
+        if ($min = array_get($this->getConfig(), 'min')) {
+            $rules[] = 'min:' . $min;
+        }
+
+        if ($max = array_get($this->getConfig(), 'max')) {
+            $rules[] = 'max:' . $max;
+        }
+
+        return $rules;
+    }
+
+    /**
      * Fired just before the entry is saved.
      *
      * @param EntryInterface $entry
      */
-    public function onEntrySaving(EntryInterface $entry)
+    public function onEntryCreating(EntryInterface $entry)
     {
         if (!$entry->{$this->getField()}
             && $this->isRequired()
