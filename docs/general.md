@@ -22,7 +22,7 @@ The slug field type provides a an input that forces the value to a slug formatte
         'example' => [
             'type'   => 'anomaly.field_type.slug',
             'config' => [
-                'type'    => '-',
+                'type'    => '_',
                 'slugify' => 'title'
             ]
         ]
@@ -30,7 +30,7 @@ The slug field type provides a an input that forces the value to a slug formatte
 
 ### `type`
 
-The slug type (separator character). Valid options are `'-'` or `'_'`. The default value is `'-'`.
+The slug type (separator character). Valid options are `'_'` or `'-'`. The default value is `'_'`.
 
 ### `slugify`
 
@@ -44,7 +44,7 @@ This field type returns the string slug by default.
 
 ### `humanized()`
 
-Returns the slug converted to a humanized string. For example `my-awesome-slug` becomes `My Awesome Slug`. 
+Returns the slug converted to a humanized string. For example `my_awesome_slug` becomes `My Awesome Slug`. 
 
     // Twig usage
     {{ entry.example.humanized }}
