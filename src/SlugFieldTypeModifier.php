@@ -39,7 +39,7 @@ class SlugFieldTypeModifier extends FieldTypeModifier
      */
     public function modify($value)
     {
-        $type = array_get($this->fieldType->getConfig(), 'type', '-');
+        $type = array_get($this->fieldType->getConfig(), 'type', '_');
 
         return trim($this->str->slug($value, $type), $type);
     }
