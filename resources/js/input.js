@@ -12,7 +12,7 @@ $(document).ready(function () {
 
         var slug = $(this);
         var form = $(this).closest('form');
-        var slugify = form.find('[data-field="' + slug.data('slugify') + '"]').first();
+        var slugify = form.find('[data-field="' + slug.data('slugify') + '"]:visible').first();
 
         if (!slug.is(':disabled') && slugify.length) {
             slugify.on('keyup', function () {
