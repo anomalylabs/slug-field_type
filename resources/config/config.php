@@ -7,17 +7,17 @@ return [
         'config'   => [
             'options' => [
                 '-' => 'foo-bar-baz',
-                '_' => 'foo_bar_baz'
-            ]
-        ]
+                '_' => 'foo_bar_baz',
+            ],
+        ],
     ],
     'slugify' => [
-        'type' => 'anomaly.field_type.text'
+        'type' => 'anomaly.field_type.text',
     ],
     'min'     => [
-        'type' => 'anomaly.field_type.integer'
+        'type' => 'anomaly.field_type.integer',
     ],
     'max'     => [
-        'type' => 'anomaly.field_type.integer'
-    ]
+        'type' => 'anomaly.field_type.integer',
+    ],
 ];

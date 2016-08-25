@@ -8,7 +8,6 @@ use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\SlugFieldType
  */
 class SlugFieldTypeServiceProvider extends AddonServiceProvider
 {
@@ -19,7 +18,7 @@ class SlugFieldTypeServiceProvider extends AddonServiceProvider
      * @var array
      */
     protected $singletons = [
-        'Anomaly\SlugFieldType\SlugFieldTypeModifier' => 'Anomaly\SlugFieldType\SlugFieldTypeModifier'
+        'Anomaly\SlugFieldType\SlugFieldTypeModifier' => 'Anomaly\SlugFieldType\SlugFieldTypeModifier',
     ];
 
 }

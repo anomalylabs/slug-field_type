@@ -2,19 +2,19 @@
 
 return [
     'type' => [
-        'label' => 'Azonosító típus',
+        'label'    => 'Azonosító típus',
     'instructions' => 'Milyen típusú azonosítót szeretnél generálni?',
     ],
     'slugify' => [
-        'label' => 'Azonosítóvá Alakít',
+        'label'    => 'Azonosítóvá Alakít',
     'instructions' => 'Adj meg egy mezőt, amiből automatikusan azonosítót generálunk.',
     ],
     'min' => [
-        'label' => 'Minimális Hossz',
+        'label'    => 'Minimális Hossz',
     'instructions' => 'Add meg az elfogadható minimális hosszt.',
     ],
     'max' => [
-        'label' => 'Maximális Hossz',
+        'label'    => 'Maximális Hossz',
     'instructions' => 'Add meg az elfogadható maximális hosszt.',
     ],
 ];

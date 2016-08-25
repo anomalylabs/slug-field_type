@@ -9,7 +9,6 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\SlugFieldType
  */
 class SlugFieldType extends FieldType
 {
@@ -27,7 +26,7 @@ class SlugFieldType extends FieldType
      * @var array
      */
     protected $config = [
-        'type' => '_'
+        'type' => '_',
     ];
 
     /**

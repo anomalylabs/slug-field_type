@@ -2,5 +2,5 @@
 
 return [
     'name'        => 'Slug',
-    'description' => 'Type de champs pour un slug.'
+    'description' => 'Type de champs pour un slug.',
 ];
