@@ -15,15 +15,30 @@ $(document).ready(function () {
         var slugify = form.find('[data-field="' + slug.data('slugify') + '"]:visible').first();
 
         if (!slug.is(':disabled') && slugify.length) {
-
             // Slugify on keyup
             slugify.on('keyup', function () {
-                slug.val(slugify.val().replace(/([^a-zA-Z0-9]+$)/g, '')).trigger('keyup');
+
+                var from = "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ";
+                var to   = "aaaaaaaaaaaaaaaaaeeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyyd";
+                var str = slugify.val();
+                for (var i=0, l=from.length ; i<l ; i++) {
+                    str = str.toString().toLowerCase().replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+                }
+
+                slug.val(str.replace(/([^a-zA-Z0-9]+$)/g, '')).trigger('keyup');
             });
 
             // And slugify on blur
             slugify.on('blur', function () {
-                slug.val(slugify.val().replace(/([^a-zA-Z0-9]+$)/g, '')).trigger('keyup');
+
+                var from = "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ";
+                var to   = "aaaaaaaaaaaaaaaaaeeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyyd";
+                var str = slugify.val();
+                for (var i=0, l=from.length ; i<l ; i++) {
+                    str = str.toString().toLowerCase().replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+                }
+
+                slug.val(str.replace(/([^a-zA-Z0-9]+$)/g, '')).trigger('keyup');
             });
         }
     });
