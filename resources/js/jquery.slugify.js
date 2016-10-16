@@ -391,7 +391,8 @@
             return;
         }
         this.type = this.cfg.type || $(e).data('type');
-        this.allow_uppercase = this.cfg.allow_uppercase || $(e).data('allow_uppercase');
+        this.lowercase = this.cfg.lowercase;
+        this.$slugify = this.cfg.slugify ? $(this.cfg.slugify) : null;
         this.$slug = $(this.cfg.slug);
         this.$title = $(e);
 
@@ -417,20 +418,28 @@
                     .replace(/-{2,}/g, this.type) // Replace multiple separators
                     .replace(/_{2,}/g, this.type); // Replace multiple separators
 
-                if (!this.allow_uppercase) {
+                if (this.lowercase) {
                     slug = slug.toLowerCase();
                 }
 
-                return slug;
+                // Trim type symbol from end.
+                return slug.replace(/([^a-zA-Z0-9]+$)/g, '');
             }
         },
         register_events: function () {
-            var me = this, $title = this.$title, $slug = this.$slug;
+            var me = this, $title = this.$title, $slug = this.$slug, $slugify = this.$slugify;
 
             // For text fields
             $title.keyup(function (e) {
                 $slug.val(me.encode(e.currentTarget.value));
             });
+
+            // For slugified fields
+            if ($slugify) {
+                $slugify.keyup(function (e) {
+                    $slug.val(me.encode($slugify.val()));
+                });
+            }
 
             // Check if it's empty first and populate if so
             if ($slug.val() == '') {
