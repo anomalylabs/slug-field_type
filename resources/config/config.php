@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'type'    => [
+    'type'      => [
         'type'     => 'anomaly.field_type.select',
         'required' => true,
         'config'   => [
@@ -11,13 +11,16 @@ return [
             ],
         ],
     ],
-    'slugify' => [
+    'slugify'   => [
         'type' => 'anomaly.field_type.text',
     ],
-    'min'     => [
+    'lowercase' => [
+        'type' => 'anomaly.field_type.boolean',
+    ],
+    'min'       => [
         'type' => 'anomaly.field_type.integer',
     ],
-    'max'     => [
+    'max'       => [
         'type' => 'anomaly.field_type.integer',
     ],
 ];
