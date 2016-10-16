@@ -391,6 +391,7 @@
             return;
         }
         this.type = this.cfg.type || $(e).data('type');
+        this.allow_uppercase = this.cfg.allow_uppercase || $(e).data('allow_uppercase');
         this.$slug = $(this.cfg.slug);
         this.$title = $(e);
 
@@ -409,13 +410,18 @@
                     slug += (char_map[str.charAt(i)]) ? char_map[str.charAt(i)] : str.charAt(i);
                 }
 
-                return slug
-                    .toLowerCase()
+                slug = slug
                     .replace(/-+/g, this.type) // Replace separators
                     .replace(/\s+/g, this.type) // Replace spaces
-                    .replace(/[^a-z0-9_\-]/g, this.type) // Replace non-alphanumerical
+                    .replace(/[^a-zA-Z0-9_\-]/g, this.type) // Replace non-alphanumerical
                     .replace(/-{2,}/g, this.type) // Replace multiple separators
                     .replace(/_{2,}/g, this.type); // Replace multiple separators
+
+                if (!this.allow_uppercase) {
+                    slug = slug.toLowerCase();
+                }
+
+                return slug;
             }
         },
         register_events: function () {
