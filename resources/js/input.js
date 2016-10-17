@@ -11,7 +11,7 @@ $(document).ready(function () {
         };
 
         if ($(this).data('slugify')) {
-            config.slugify = '[name="' + $(this).data('slugify') + '"]';
+            config.slugify = '[data-field="' + $(this).data('slugify') + '"]:visible:first'
         }
 
         // Slugify slug inputs.
