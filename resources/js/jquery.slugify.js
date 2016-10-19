@@ -422,8 +422,7 @@
                     slug = slug.toLowerCase();
                 }
 
-                // Trim type symbol from end.
-                return slug.replace(/([^a-zA-Z0-9]+$)/g, '');
+                return slug;
             }
         },
         register_events: function () {
@@ -437,7 +436,8 @@
             // For slugified fields
             if ($slugify) {
                 $slugify.keyup(function (e) {
-                    $slug.val(me.encode($slugify.val()));
+                    $slug.val(me.encode($slugify.val())
+                        .replace(/([^a-zA-Z0-9]+$)/g, ''));
                 });
             }
 
