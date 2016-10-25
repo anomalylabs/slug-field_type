@@ -1,18 +1,13 @@
 $(document).ready(function () {
 
-    var selector = 'input[data-provides="anomaly.field_type.slug"]';
-
     // Watch for changes if applicable.
-    $(selector).each(function () {
+    $('input[data-provides="anomaly.field_type.slug"]').each(function () {
 
         var config = {
             slug: this,
-            lowercase: $(this).data('lowercase')
+            lowercase: $(this).data('lowercase'),
+            slugify: '[data-field="' + $(this).data('slugify') + '"]:visible:first'
         };
-
-        if ($(this).data('slugify')) {
-            config.slugify = '[data-field="' + $(this).data('slugify') + '"]:visible:first'
-        }
 
         // Slugify slug inputs.
         $(this).slugify(config);
