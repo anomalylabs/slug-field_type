@@ -325,7 +325,7 @@
         'Ų': 'U',
         'Ū': 'U',
         'Ž': 'Z',
-        
+
         //Vietnamese
         'à': 'a',
         'á': 'a',
@@ -566,7 +566,15 @@
 
             // For text fields
             $title.keyup(function (e) {
-                $slug.val(me.encode(e.currentTarget.value));
+
+                // store current positions in variables
+                var start = $title[0].selectionStart,
+                    end = $title[0].selectionEnd;
+
+                $title.val(me.encode(e.currentTarget.value));
+
+                // restore from variables...
+                $title[0].setSelectionRange(start, end);
             });
 
             // For slugified fields
