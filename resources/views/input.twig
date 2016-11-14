@@ -17,6 +17,7 @@
             data-type="{{ field_type.config.type }}"
             placeholder="{{ field_type.placeholder }}"
             data-slugify="{{ field_type.config.slugify }}"
+            data-always-slugify="{{ field_type.config.always_slugify }}"
             data-lowercase="{{ field_type.config.lowercase }}"
             {{ html_attributes(field_type.attributes) }}
             {{ field_type.disabled ? 'disabled' }}

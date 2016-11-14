@@ -27,7 +27,7 @@ class SlugFieldType extends FieldType
      */
     protected $config = [
         'type'      => '_',
-        'lowercase' => true,
+        'lowercase' => true
     ];
 
     /**
