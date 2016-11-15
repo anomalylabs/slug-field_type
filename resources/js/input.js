@@ -3,7 +3,7 @@ $(document).ready(function () {
     // Watch for changes if applicable.
 
     $('input[data-provides="anomaly.field_type.slug"]').each(function () {
-        if (!$(this).val() || $(this).data('always-slugify')) {
+        if (!$(this).val() || $(this).data('always_slugify')) {
 
             var config = {
                 slug: this,
