@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).on('ajaxComplete ready', function () {
     
     $('input[data-provides="anomaly.field_type.slug"]:not([data-initialized])').each(function () {
 
