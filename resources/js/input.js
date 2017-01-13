@@ -1,6 +1,8 @@
 $(document).ready(function () {
     
-    $('input[data-provides="anomaly.field_type.slug"]').each(function () {
+    $('input[data-provides="anomaly.field_type.slug"]:not([data-initialized])').each(function () {
+
+        $(this).attr('data-initialized', '');
 
         var config = {
             slug: this,
