@@ -155,12 +155,6 @@
         'Ş': 'S',
         'ı': 'i',
         'İ': 'I',
-        'ç': 'c',
-        'Ç': 'C',
-        'ü': 'u',
-        'Ü': 'U',
-        'ö': 'o',
-        'Ö': 'O',
         'ğ': 'g',
         'Ğ': 'G',
 
@@ -268,7 +262,6 @@
         'ę': 'e',
         'ł': 'l',
         'ń': 'n',
-        'ó': 'o',
         'ś': 's',
         'ź': 'z',
         'ż': 'z',
@@ -277,62 +270,39 @@
         'Ę': 'e',
         'Ł': 'L',
         'Ń': 'N',
-        'Ó': 'o',
         'Ś': 'S',
         'Ź': 'Z',
         'Ż': 'Z',
 
         //Latvian
         'ā': 'a',
-        'č': 'c',
         'ē': 'e',
         'ģ': 'g',
         'ī': 'i',
         'ķ': 'k',
         'ļ': 'l',
         'ņ': 'n',
-        'š': 's',
         'ū': 'u',
-        'ž': 'z',
         'Ā': 'A',
-        'Č': 'C',
         'Ē': 'E',
         'Ģ': 'G',
         'Ī': 'i',
         'Ķ': 'k',
         'Ļ': 'L',
         'Ņ': 'N',
-        'Š': 'S',
         'Ū': 'u',
-        'Ž': 'Z',
 
         //Lithuanian
-        'ą': 'a',
-        'č': 'c',
-        'ę': 'e',
         'ė': 'e',
         'į': 'i',
-        'š': 's',
         'ų': 'u',
-        'ū': 'u',
-        'ž': 'z',
-        'Ą': 'A',
-        'Č': 'C',
-        'Ę': 'E',
         'Ė': 'E',
         'Į': 'I',
-        'Š': 'S',
         'Ų': 'U',
-        'Ū': 'U',
-        'Ž': 'Z',
 
         //Vietnamese
-        'à': 'a',
-        'á': 'a',
         'ạ': 'a',
         'ả': 'a',
-        'ã': 'a',
-        'â': 'a',
         'ầ': 'a',
         'ấ': 'a',
         'ậ': 'a',
@@ -344,12 +314,8 @@
         'ặ': 'a',
         'ẳ': 'a',
         'ẵ': 'a',
-        'À': 'a',
-        'Á': 'a',
         'Ạ': 'a',
         'Ả': 'a',
-        'Ã': 'a',
-        'Â': 'a',
         'Ầ': 'a',
         'Ấ': 'a',
         'Ậ': 'a',
@@ -361,44 +327,30 @@
         'Ặ': 'a',
         'Ẳ': 'a',
         'Ẵ': 'a',
-        'è': 'e',
-        'é': 'e',
         'ẹ': 'e',
         'ẻ': 'e',
         'ẽ': 'e',
-        'ê': 'e',
         'ề': 'e',
         'ế': 'e',
         'ệ': 'e',
         'ễ': 'e',
         'ể': 'e',
-        'È': 'e',
-        'É': 'e',
         'Ẹ': 'e',
         'Ẻ': 'e',
         'Ẽ': 'e',
-        'Ê': 'e',
         'Ề': 'e',
         'Ế': 'e',
         'Ệ': 'e',
         'Ễ': 'e',
         'Ể': 'e',
-        'í': 'i',
-        'ì': 'i',
         'ị': 'i',
         'ỉ': 'i',
         'ĩ': 'i',
-        'Í': 'i',
-        'Ì': 'i',
         'Ị': 'i',
         'Ỉ': 'i',
         'Ĩ': 'i',
-        'ò': 'o',
-        'ó': 'o',
         'ỏ': 'o',
-        'õ': 'o',
         'ọ': 'o',
-        'ô': 'o',
         'ồ': 'o',
         'ố': 'o',
         'ộ': 'o',
@@ -410,12 +362,8 @@
         'ợ': 'o',
         'ở': 'o',
         'ỡ': 'o',
-        'Ò': 'o',
-        'Ó': 'o',
         'Ỏ': 'o',
-        'Õ': 'o',
         'Ọ': 'o',
-        'Ô': 'o',
         'Ồ': 'o',
         'Ố': 'o',
         'Ộ': 'o',
@@ -427,8 +375,6 @@
         'Ợ': 'o',
         'Ở': 'o',
         'Ỡ': 'o',
-        'ù': 'u',
-        'ú': 'u',
         'ụ': 'u',
         'ủ': 'u',
         'ũ': 'u',
@@ -438,8 +384,6 @@
         'ự': 'u',
         'ử': 'u',
         'ữ': 'u',
-        'Ù': 'u',
-        'Ú': 'u',
         'Ụ': 'u',
         'Ủ': 'u',
         'Ũ': 'u',
@@ -450,12 +394,10 @@
         'Ử': 'u',
         'Ữ': 'u',
         'ỳ': 'y',
-        'ý': 'y',
         'ỵ': 'y',
         'ỷ': 'y',
         'ỹ': 'y',
         'Ỳ': 'y',
-        'ý': 'y',
         'Ỵ': 'y',
         'Ỷ': 'y',
         'Ỹ': 'y',
@@ -502,8 +444,8 @@
         '†': '+',
         '“': '"',
         '”': '"',
-        '‘': "'",
-        '’': "'",
+        '‘': '\'',
+        '’': '\'',
         '∂': 'd',
         'ƒ': 'f',
         '™': 'tm',
@@ -522,7 +464,7 @@
     var Slugify = function (e, cfg) {
         this.cfg = cfg || {};
 
-        if (typeof this.cfg.slug == 'undefined') {
+        if (typeof this.cfg.slug === 'undefined') {
             console.log('Error no slug field');
             return;
         }
@@ -537,7 +479,7 @@
 
     Slugify.prototype = {
         encode: function (str) {
-            if (typeof str != 'undefined') {
+            if (typeof str !== 'undefined') {
 
                 var slug = '';
 
@@ -562,10 +504,13 @@
             }
         },
         register_events: function () {
-            var me = this, $title = this.$title, $slug = this.$slug, $slugify = this.$slugify;
+            var me = this,
+                $title = this.$title,
+                $slug = this.$slug,
+                $slugify = this.$slugify;
 
             // For text fields
-            $title.keyup(function (e) {
+            $title.on('keyup blur', function (e) {
 
                 // store current positions in variables
                 var start = $title[0].selectionStart,
@@ -579,14 +524,14 @@
 
             // For slugified fields
             if ($slugify) {
-                $slugify.keyup(function (e) {
+                $slugify.on('keyup', function (e) {
                     $slug.val(me.encode($slugify.val())
                         .replace(/([^a-zA-Z0-9]+$)/g, ''));
                 });
             }
 
             // Check if it's empty first and populate if so
-            if ($slug.val() == '') {
+            if ($slug.val() === '') {
                 $slug.val(me.encode($title.val()));
             }
         }
@@ -594,12 +539,12 @@
 
     $.fn.slugify = function (option) {
         return this.each(function () {
-            var $this = $(this)
-                , data = $this.data('slug')
-                , options = $.extend({}, $.fn.slugify.defaults, $this.data(), typeof option == 'object' && option);
+            var $this = $(this),
+                data = $this.data('slug'),
+                options = $.extend({}, $.fn.slugify.defaults, $this.data(), typeof option === 'object' && option);
             if (!data) $this.data('slug', (data = new Slugify(this, options)));
-            if (typeof option == 'string') data[option]();
-        })
+            if (typeof option === 'string') data[option]();
+        });
     };
 
 })(window, jQuery);
