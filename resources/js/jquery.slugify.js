@@ -522,7 +522,7 @@
     var Slugify = function (e, cfg) {
         this.cfg = cfg || {};
 
-        if (typeof this.cfg.slug == 'undefined') {
+        if (typeof this.cfg.slug === 'undefined') {
             console.log('Error no slug field');
             return;
         }
@@ -537,7 +537,7 @@
 
     Slugify.prototype = {
         encode: function (str) {
-            if (typeof str != 'undefined') {
+            if (typeof str !== 'undefined') {
 
                 var slug = '';
 
@@ -562,10 +562,13 @@
             }
         },
         register_events: function () {
-            var me = this, $title = this.$title, $slug = this.$slug, $slugify = this.$slugify;
+            var me = this,
+                $title = this.$title,
+                $slug = this.$slug,
+                $slugify = this.$slugify;
 
             // For text fields
-            $title.keyup(function (e) {
+            $title.on('keyup blur', function (e) {
 
                 // store current positions in variables
                 var start = $title[0].selectionStart,
@@ -579,7 +582,7 @@
 
             // For slugified fields
             if ($slugify) {
-                $slugify.keyup(function (e) {
+                $slugify.on('keyup blur', function (e) {
                     $slug.val(me.encode($slugify.val())
                         .replace(/([^a-zA-Z0-9]+$)/g, ''));
                 });
@@ -594,11 +597,11 @@
 
     $.fn.slugify = function (option) {
         return this.each(function () {
-            var $this = $(this)
-                , data = $this.data('slug')
-                , options = $.extend({}, $.fn.slugify.defaults, $this.data(), typeof option == 'object' && option);
+            var $this = $(this),
+                data = $this.data('slug'),
+                options = $.extend({}, $.fn.slugify.defaults, $this.data(), typeof option == 'object' && option);
             if (!data) $this.data('slug', (data = new Slugify(this, options)));
-            if (typeof option == 'string') data[option]();
+            if (typeof option === 'string') data[option]();
         })
     };
 
