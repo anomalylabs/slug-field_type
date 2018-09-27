@@ -577,7 +577,7 @@
                 $title.val(me.encode(e.currentTarget.value));
 
                 // restore from variables...
-                $title[0].setSelectionRange(start, end);
+                //$title[0].setSelectionRange(start, end);
             });
 
             // For slugified fields
