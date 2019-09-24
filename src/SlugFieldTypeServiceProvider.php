@@ -20,5 +20,4 @@ class SlugFieldTypeServiceProvider extends AddonServiceProvider
     protected $singletons = [
         'Anomaly\SlugFieldType\SlugFieldTypeModifier' => 'Anomaly\SlugFieldType\SlugFieldTypeModifier',
     ];
-
 }
