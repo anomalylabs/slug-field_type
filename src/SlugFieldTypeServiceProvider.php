@@ -15,15 +15,6 @@ class SlugFieldTypeServiceProvider extends AddonServiceProvider implements Defer
 {
 
     /**
-     * Singleton bindings.
-     *
-     * @var array
-     */
-    protected $singletons = [
-        'Anomaly\SlugFieldType\SlugFieldTypeModifier' => 'Anomaly\SlugFieldType\SlugFieldTypeModifier',
-    ];
-
-    /**
      * Return the provided services.
      */
     public function provides()
