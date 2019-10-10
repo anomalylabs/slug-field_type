@@ -1,15 +1,17 @@
-<?php namespace Anomaly\SlugFieldType;
+<?php
+
+namespace Anomaly\SlugFieldType;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
 
 /**
  * Class SlugFieldTypeServiceProvider
  *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
+ * @link   http://pyrocms.com/
+ * @author Ryan Thompson <ryan@pyrocms.com>
  */
-class SlugFieldTypeServiceProvider extends AddonServiceProvider
+class SlugFieldTypeServiceProvider extends AddonServiceProvider implements DeferrableProvider
 {
 
     /**
@@ -20,4 +22,12 @@ class SlugFieldTypeServiceProvider extends AddonServiceProvider
     protected $singletons = [
         'Anomaly\SlugFieldType\SlugFieldTypeModifier' => 'Anomaly\SlugFieldType\SlugFieldTypeModifier',
     ];
+
+    /**
+     * Return the provided services.
+     */
+    public function provides()
+    {
+        return [SlugFieldType::class];
+    }
 }
