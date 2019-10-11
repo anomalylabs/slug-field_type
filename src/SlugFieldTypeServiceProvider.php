@@ -19,6 +19,6 @@ class SlugFieldTypeServiceProvider extends AddonServiceProvider implements Defer
      */
     public function provides()
     {
-        return [SlugFieldType::class];
+        return [SlugFieldType::class, 'anomaly.field_type.slug'];
     }
 }
