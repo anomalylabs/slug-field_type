@@ -19,7 +19,9 @@
             data-slugify="{{ $fieldType->config('slugify') }}"
             data-always_slugify="{{ $fieldType->config('always_slugify') }}"
             data-lowercase="{{ $fieldType->config('lowercase') }}"
-            {{ html_attributes($fieldType->attributes) }}>
+            {!! html_attributes(array_merge($fieldType->attributes, [
+                'class' => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+            ])) !!}>
 
     @if ($fieldType->config('suffix'))    
         <span class="input-group-addon">
