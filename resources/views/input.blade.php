@@ -1,6 +1,4 @@
-{{ assets("scripts.js", "anomaly.field_type.slug::js/jquery.slugify.js") }}
 {{ assets("scripts.js", "anomaly.field_type.slug::js/input.js") }}
-
 
 <div class="{{ ($fieldType->config('prefix') || $fieldType->config('suffix')) ? 'input-group' : '' }}">
 

@@ -1,24 +1,16 @@
-$(document).on('ajaxComplete ready', function () {
+(function (window, document) {
 
-    $('input[data-provides="anomaly.field_type.slug"]:not([data-initialized])').each(function () {
+    let fields = Array.prototype.slice.call(
+        document.querySelectorAll('input[data-provides="anomaly.field_type.slug"]')
+    );
 
-        $(this).attr('data-initialized', '');
+    fields.forEach(function (field) {
 
-        var config = {
-            slug: this,
-            lowercase: $(this).data('lowercase')
-        };
+        field.addEventListener('keyup', function (event) {
 
-        /**
-         * Only slugify other fields if
-         * value is empty OR configured
-         * to always slugify field values.
-         */
-        if (!$(this).val() || $(this).data('always_slugify')) {
-            config.slugify = '[data-field="' + $(this).data('slugify') + '"]:visible:first';
-        }
-
-        // Slugify slug inputs.
-        $(this).slugify(config);
+            //config.slugify = '[data-field="' + $(this).data('slugify') + '"]:visible:first';
+            event.target.value = event.target.value.toLowerCase().replace(/ /g, event.target.dataset.type).replace(/[^\w-]+/g, '');
+        });
     });
-});
+
+})(window, document);
