@@ -8,18 +8,13 @@
         </span>
     @endif
 
-    <input
-            type="text"
-            value="{{ $fieldType->value }}"
-            name="{{ $fieldType->input_name }}"
-            data-type="{{ $fieldType->config('type') }}"
-            placeholder="{{ $fieldType->placeholder }}"
-            data-slugify="{{ $fieldType->config('slugify') }}"
-            data-always_slugify="{{ $fieldType->config('always_slugify') }}"
-            data-lowercase="{{ $fieldType->config('lowercase') }}"
-            {!! html_attributes(array_merge($fieldType->attributes, [
-                'class' => 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-            ])) !!}>
+    <input {!! html_attributes($fieldType->attributes([
+        'type' => 'text',
+        'data-type'=> $fieldType->config('type'),
+        'data-slugify'=> $fieldType->config('slugify'),
+        'data-lowercase'=> $fieldType->config('lowercase'),
+        'data-always_slugify'=> $fieldType->config('always_slugify'),
+    ])) !!}>
 
     @if ($fieldType->config('suffix'))    
         <span class="input-group-addon">
