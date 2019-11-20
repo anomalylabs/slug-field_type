@@ -1,4 +1,6 @@
-<?php namespace Anomaly\SlugFieldType;
+<?php
+
+namespace Anomaly\SlugFieldType;
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
@@ -57,11 +59,28 @@ class SlugFieldType extends FieldType
      */
     public function onEntryCreating(EntryInterface $entry)
     {
-        if (!$entry->{$this->getField()}
+        if (
+            !$entry->{$this->getField()}
             && $this->isRequired()
             && $slugify = array_get($this->getConfig(), 'slugify')
         ) {
             $entry->{$this->getField()} = $entry->{$slugify};
         }
+    }
+
+    /**
+     * Get the attributes.
+     * 
+     * @return array
+     */
+    public function getAttributes()
+    {
+        return array_merge(parent::getAttributes(), [
+            'type' => 'text',
+            'data-type' => $this->config('type'),
+            'data-slugify' => $this->config('slugify'),
+            'data-lowercase' => $this->config('lowercase'),
+            'data-always_slugify' => $this->config('always_slugify'),
+        ]);
     }
 }

@@ -8,13 +8,7 @@
         </span>
     @endif
 
-    <input {!! html_attributes($fieldType->attributes([
-        'type' => 'text',
-        'data-type'=> $fieldType->config('type'),
-        'data-slugify'=> $fieldType->config('slugify'),
-        'data-lowercase'=> $fieldType->config('lowercase'),
-        'data-always_slugify'=> $fieldType->config('always_slugify'),
-    ])) !!}>
+    <input {!! html_attributes($fieldType->attributes()) !!}>
 
     @if ($fieldType->config('suffix'))    
         <span class="input-group-addon">
