@@ -69,18 +69,20 @@ class SlugFieldType extends FieldType
     }
 
     /**
-     * Get the attributes.
-     * 
-     * @return array
+     * Return merged attributes.
+     *
+     * @param array $attributes
      */
-    public function getAttributes()
+    public function attributes(array $attributes = [])
     {
-        return array_merge(parent::getAttributes(), [
+        return array_merge(parent::attributes(), [
             'type' => 'text',
+            'autocomplete' => 'off',
+            'data-lpignore' => true,
             'data-type' => $this->config('type'),
             'data-slugify' => $this->config('slugify'),
             'data-lowercase' => $this->config('lowercase'),
             'data-always_slugify' => $this->config('always_slugify'),
-        ]);
+        ], $attributes);
     }
 }
