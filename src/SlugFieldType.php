@@ -77,8 +77,6 @@ class SlugFieldType extends FieldType
     {
         return array_merge(parent::attributes(), [
             'type' => 'text',
-            'autocomplete' => 'off',
-            'data-lpignore' => true,
             'data-type' => $this->config('type'),
             'data-slugify' => $this->config('slugify'),
             'data-lowercase' => $this->config('lowercase'),
