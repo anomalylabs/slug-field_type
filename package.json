@@ -1,0 +1,19 @@
+{
+    "name": "@anomaly/slug-field_type",
+    "version": "1.0.0",
+    "main": "lib/index.js",
+    "typings": "lib/index.js",
+    "types": "lib/index.js",
+    "pyro": {
+        "srcPath": "lib",
+        "entrypoints": [
+            {"path": "index.js", "provider": "SlugFieldTypeServiceProvider"}
+        ]
+    },
+    "scripts": {},
+    "dependencies": {
+        "@anomaly/streams-platform": "^1.0.0"
+    },
+    "devDependencies": {
+    }
+}
