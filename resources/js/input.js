@@ -1,16 +1,35 @@
-(function () {
+var slug = require('slug');
 
-    let fields = Array.prototype.slice.call(
-        document.querySelectorAll('input[data-provides="anomaly.field_type.slug"]')
-    );
+slug.charmap[' '] = '-';
 
-    fields.forEach(function (field) {
+window.addEventListener('keydown', function (event) {
 
-        field.addEventListener('keyup', function (event) {
+    if (!event.target.matches('input[data-provides="anomaly.field_type.slug"]')) {
+        return;
+    }
 
-            //config.slugify = '[data-field="' + $(this).data('slugify') + '"]:visible:first';
-            event.target.value = event.target.value.toLowerCase().replace(/ /g, event.target.dataset.type).replace(/[^\w-]+/g, '');
-        });
+    let input = event.target;
+
+    input.value = slug(input.value, {
+        lower: true,
+        replacement: input.dataset.type,
     });
+});
 
+window.addEventListener('keyup', function (event) {
+
+    if (!event.target.dataset.field || event.target.matches('input[data-provides="anomaly.field_type.slug"]')) {
+        return;
+    }
+
+    if (!(input = document.querySelector('input[data-provides="anomaly.field_type.slug"][data-slugify="' + event.target.dataset.field + '"]'))) {
+        return;
+    }
+
+    let slugify = event.target;
+
+    input.value = slug(slugify.value, {
+        lower: true,
+        replacement: input.dataset.type,
+    });
 });
