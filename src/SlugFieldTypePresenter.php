@@ -1,27 +1,17 @@
-<?php namespace Anomaly\SlugFieldType;
+<?php
+
+namespace Anomaly\SlugFieldType;
 
 use Anomaly\Streams\Platform\Addon\FieldType\FieldTypePresenter;
 
 /**
- * Class SlugFieldTypePresenter
+ * SlugFieldTypePresenter class
  *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
+ * @link   http://pyrocms.com/
+ * @author Ryan Thompson <ryan@pyrocms.com>
  */
 class SlugFieldTypePresenter extends FieldTypePresenter
 {
-
-    /**
-     * Return the humanized string.
-     *
-     * @deprecated Remove in 2.0
-     * @return string
-     */
-    public function humanized()
-    {
-        return $this->humanize();
-    }
 
     /**
      * Return the humanized string.
@@ -30,6 +20,6 @@ class SlugFieldTypePresenter extends FieldTypePresenter
      */
     public function humanize()
     {
-        return str_replace(array_get($this->object->getConfig(), 'type'), ' ', $this->object->getValue());
+        return humanize($this->object->getValue(), $this->object->config('type'));
     }
 }

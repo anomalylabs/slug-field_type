@@ -55,16 +55,24 @@ class SlugFieldType extends FieldType
     /**
      * Fired just before the entry is saved.
      *
+     * @todo Needs test coverage.
+     *
      * @param EntryInterface $entry
      */
     public function onEntryCreating(EntryInterface $entry)
     {
         if (
-            !$entry->{$this->getField()}
+            is_null($entry->getAttribute($this->getField()))
             && $this->isRequired()
-            && $slugify = array_get($this->getConfig(), 'slugify')
+            && $slugify = $this->config('slugify')
         ) {
-            $entry->{$this->getField()} = $entry->{$slugify};
+            $entry->setAttribute(
+                $this->getField(),
+                $this->getModifier()
+                    ->modify(
+                        $entry->getAttribute($slugify)
+                    )
+            );
         }
     }
 
