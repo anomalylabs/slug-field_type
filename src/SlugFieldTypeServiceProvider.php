@@ -14,6 +14,13 @@ use Illuminate\Contracts\Support\DeferrableProvider;
 class SlugFieldTypeServiceProvider extends AddonServiceProvider implements DeferrableProvider
 {
 
+    public function boot()
+    {
+        parent::boot();
+        
+        assets('scripts.js', 'public::vendor/anomaly/field_type/slug/js/input.js');
+    }
+
     /**
      * Return the provided services.
      */
