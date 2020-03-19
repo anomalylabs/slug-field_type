@@ -128,18 +128,21 @@ slug.charmap[' '] = '-';
         lower: true,
         replacement: '-'
       });
+    },
+    watch: function watch(selector) {
+      var self = this;
+
+      if (self.slugify = document.querySelector('[name="' + selector + '"]')) {
+        setTimeout(function () {
+          self.slugify.addEventListener('keyup', function () {
+            self.sync();
+          });
+        }, 250);
+      }
     }
   },
   mounted: function mounted() {
-    var self = this;
-
-    if (self.slugify = document.querySelector('[name="' + self.slugify + '"]')) {
-      setTimeout(function () {
-        self.slugify.addEventListener('keyup', function () {
-          self.sync();
-        });
-      }, 250);
-    }
+    this.watch(this.slugify);
   }
 });
 
