@@ -1,5 +1,11 @@
 let mix = require('laravel-mix');
 
+mix.webpackConfig({
+    externals: {
+        "@anomaly/streams-platform": "streams"
+    }
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,10 +18,8 @@ let mix = require('laravel-mix');
  */
 
 mix
-    .js('resources/js/input.js', 'assets/js/input.js')
-    .options({
-        processCssUrls: false
-    });
+    .js('resources/assets/js/index.js', 'resources/dist/js')
+    .copyDirectory('resources/dist', '../../../public/vendor/anomaly/field_type/slug');
 
 // Full API
 // mix.js(src, output);
