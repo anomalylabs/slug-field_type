@@ -108,10 +108,15 @@ slug.charmap[' '] = '-';
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      value: 'slug',
-      slugify: 'name'
+      slugify: 'name',
+      value: null
     };
   },
+  // props() {
+  //     return {
+  //         value: String,
+  //     }
+  // },
   methods: {
     update: function update() {
       this.value = slug(this.value, {

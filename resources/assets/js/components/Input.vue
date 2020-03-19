@@ -14,10 +14,15 @@ slug.charmap[' '] = '-';
 export default {
     data() {
         return {
-            value: 'slug',
             slugify: 'name',
+            value: null,
         }
     },
+    // props() {
+    //     return {
+    //         value: String,
+    //     }
+    // },
     methods: {
         update() {
             this.value = slug(this.value, {
