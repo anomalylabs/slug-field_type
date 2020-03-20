@@ -105,6 +105,7 @@ var slug = __webpack_require__(/*! slug */ "./node_modules/slug/slug.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
+    name: String,
     value: String,
     slugify: String,
     lowercase: Boolean,

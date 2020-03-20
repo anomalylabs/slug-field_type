@@ -10,6 +10,7 @@ let slug = require('slug');
 
 export default {
     props: {
+        name: String,
         value: String,
         slugify: String,
         lowercase: Boolean,
