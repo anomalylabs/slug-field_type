@@ -1,43 +1,38 @@
 <template>
     <div>
-        <input type="text" class="input" v-model="value" @keyup="update"/>
+        <input type="text" class="input" v-model="value" @keyup="update()"/>
     </div>
 </template>
 
 <script>
 
-var slug = require('slug');
-
-// Replace spaces
-slug.charmap[' '] = '-';
+let slug = require('slug');
 
 export default {
-    data() {
-        return {
-            slugify: 'name',
-            value: null,
-        }
+    props: {
+        value: String,
+        slugify: String,
+        lowercase: Boolean,
+        replacement: String,
     },
-    // props() {
-    //     return {
-    //         value: String,
-    //     }
-    // },
+    data: {
+        source: null,
+    },
     methods: {
         update() {
             this.value = slug(this.value, {
-                lower: true,
-                replacement: '-',
+                lower: this.lowercase,
+                replacement: this.replacement,
             })
         },
         sync() {
             
-            if (!this.slugify) {
+            if (!this.source) {
                 return;
             }
 
-            this.value = slug(this.slugify.value, {
-                lower: true,
+            this.value = slug(this.source.value, {
+                lower: this.lowercase,
                 replacement: '-',
             })
         },
@@ -45,10 +40,9 @@ export default {
 
             let self = this;
 
-            if (self.slugify = document.querySelector('[name="' + selector + '"]')) {
-
+            if (self.source = document.querySelector('[name="' + selector + '"]')) {
                 setTimeout(function() {
-                    self.slugify.addEventListener('keyup', function() {
+                    self.source.addEventListener('keyup', function() {
                         self.sync();
                     });
                 }, 250);
@@ -56,7 +50,14 @@ export default {
         }
     },
     mounted() {
-        this.watch(this.slugify);
+
+        if (this.slugify) {
+            this.watch(this.slugify);
+        }
+
+        if (this.replacement) {
+            slug.charmap[' '] = this.replacement;
+        }
     }
 };
 </script>
