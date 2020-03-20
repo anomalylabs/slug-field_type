@@ -3156,7 +3156,7 @@ var render = function() {
         }
       ],
       staticClass: "input",
-      attrs: { type: "text" },
+      attrs: { type: "text", name: _vm.name },
       domProps: { value: _vm.value },
       on: {
         keyup: function($event) {

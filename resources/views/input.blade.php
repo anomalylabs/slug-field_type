@@ -4,6 +4,7 @@
 
 <slug-field-type {!! html_attributes([
     'value' => $fieldType->getValue(),
+    'name' => $fieldType->getInputName(),
     'slugify' => $fieldType->config('slugify'),
     'lowercase' => $fieldType->config('lowercase'),
     'replacement' => $fieldType->config('type'), // @todo rename to replacement

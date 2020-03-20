@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="text" class="input" v-model="value" @keyup="update()"/>
+        <input type="text" class="input" :name="name" v-model="value" @keyup="update()"/>
     </div>
 </template>
 
