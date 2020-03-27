@@ -16,8 +16,6 @@ class SlugFieldTypeServiceProvider extends AddonServiceProvider implements Defer
 
     public function boot()
     {
-        parent::boot();
-        
         assets('scripts.js', 'public::vendor/anomaly/field_type/slug/js/input.js');
     }
 
