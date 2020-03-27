@@ -58,6 +58,7 @@ export default {
 
         if (this.replacement) {
             slug.charmap[' '] = this.replacement;
+            slug.charmap['~'] = this.replacement;
         }
     }
 };
