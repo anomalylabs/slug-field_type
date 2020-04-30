@@ -3,8 +3,8 @@
 @endphp
 
 <slug-field-type {!! html_attributes([
-    'value' => $fieldType->getValue(),
-    'name' => $fieldType->getInputName(),
+    'value' => $fieldType->value,
+    'name' => $fieldType->getInputName,
     'placeholder' => $fieldType->placeholder,
     'slugify' => $fieldType->config('slugify'),
     'lowercase' => $fieldType->config('lowercase'),

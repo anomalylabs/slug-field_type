@@ -82,6 +82,7 @@ class SlugFieldType extends FieldType
      */
     public function attributes(array $attributes = [])
     {
+        return [];
         return array_merge(parent::attributes(), [
             'type' => 'text',
             'data-type' => $this->config('type'),
